@@ -3,3 +3,9 @@
 
 # Compiled python files
 *.pyc
+
+# Data directory
+data/
+
+# Python env directory
+env/
