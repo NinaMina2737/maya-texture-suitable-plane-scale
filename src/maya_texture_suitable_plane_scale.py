@@ -59,12 +59,9 @@ def check_size():
     return objects, object_sizes, file_sizes
 
 def match_size(objects, object_sizes, file_sizes, ratio=0.01):
-    cmds.undoInfo(openChunk=True)
     for object_, object_size, file_size in zip(objects, object_sizes, file_sizes):
         if file_size:
             cmds.scale(file_size[0] / object_size[0] * ratio, file_size[1] / object_size[1] * ratio, object_, relative=True, xz=True)
-    cmds.undoInfo(closeChunk=True)
-
 
 def execute():
     try:
