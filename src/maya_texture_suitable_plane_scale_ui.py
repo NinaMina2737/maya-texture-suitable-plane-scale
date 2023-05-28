@@ -8,6 +8,7 @@ from PySide2 import QtCore, QtWidgets
 import traceback
 
 import maya_texture_suitable_plane_scale as mtsps
+reload(mtsps)
 
 WINDOW_TITLE = "textureSuitablePlaneScale"
 
