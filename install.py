@@ -42,7 +42,7 @@ _MODULE_VERSION = "v1.0.0"
 _SCRIPTS_DIR_NAME = "src"
 
 # About shelf button
-_COMMAND = """import import maya_texture_suitable_plane_scale_ui as scr<COMMAND_NEW_LINE>reload(scr)<COMMAND_NEW_LINE>scr.execute()<COMMAND_NEW_LINE>"""
+_COMMAND = """import maya_texture_suitable_plane_scale_ui as scr<COMMAND_NEW_LINE>reload(scr)<COMMAND_NEW_LINE>scr.execute()<COMMAND_NEW_LINE>"""
 _ICON_DIR_NAME = "icons"
 _ICON_FILE_NAME = "pythonFamily.png" # default: "commandButton.png" or "pythonFamily.png"
 _SOURCE_TYPE = "python" # "mel" or "python"
