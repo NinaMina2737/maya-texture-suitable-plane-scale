@@ -89,13 +89,13 @@ def match_size(objects, object_sizes, file_sizes, ratio=0.01):
         if file_size:
             cmds.scale(file_size[0] / object_size[0] * ratio, file_size[1] / object_size[1] * ratio, object_, relative=True, xz=True)
 
-def execute():
+def execute(ratio=0.01):
     try:
         # Open an undo chunk
         cmds.undoInfo(openChunk=True)
         # Execute the script
         objects, object_sizes, file_sizes = check_size()
-        match_size(objects, object_sizes, file_sizes)
+        match_size(objects=objects, object_sizes=object_sizes, file_sizes=file_sizes, ratio=ratio)
     except Exception as e:
         # Print the error message
         cmds.warning("An error occurred: {}".format(str(e)))

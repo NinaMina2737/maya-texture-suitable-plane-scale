@@ -61,7 +61,7 @@ class TextureSuitablePlaneScaleUI(MayaQWidgetBaseMixin, QtWidgets.QWidget):
         self.scale_button = QtWidgets.QPushButton()
         self.scale_button.setObjectName("scale_button")
         self.scale_button.setText("Scale")
-        self.scale_button.clicked.connect(mtsps.execute)
+        self.scale_button.clicked.connect(self.on_scale_button_clicked)
 
     def create_layout(self):
         main_verticalLayout = QtWidgets.QVBoxLayout(self)
@@ -85,6 +85,18 @@ class TextureSuitablePlaneScaleUI(MayaQWidgetBaseMixin, QtWidgets.QWidget):
         main_verticalLayout.addLayout(magnification_gridLayout)
 
         main_verticalLayout.addWidget(self.scale_button)
+
+    def on_scale_button_clicked(self):
+        ratio = 1.0
+        if self.radioButton_1.isChecked():
+            ratio = 1.0
+        elif self.radioButton_10.isChecked():
+            ratio = 0.1
+        elif self.radioButton_100.isChecked():
+            ratio = 0.01
+        elif self.radioButton_1000.isChecked():
+            ratio = 0.001
+        mtsps.execute(ratio=ratio)
 
 def execute():
     """
